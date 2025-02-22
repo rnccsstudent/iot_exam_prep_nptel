@@ -4,43 +4,192 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IoT Exam Preparation</title>
-    <link rel="stylesheet" href="assets/style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f4f4f4;
+            color: #333;
+            transition: background 0.3s, color 0.3s;
+        }
+        .dark-mode {
+            background: #1e1e1e;
+            color: #fff;
+        }
+        .container {
+            display: flex;
+            height: 100vh;
+        }
+        /* .sidebar {
+            /* width: 250px; 
+            background: #2c3e50;
+            color: white;
+            padding: 20px;
+            position: fixed;
+            left: -250px;
+            height: 100%;
+            transition: left 0.3s ease;
+        } */
+        .sidebar {
+            background: #2c3e50;
+            color: white;
+            padding: 20px;
+            position: fixed;
+            left: -250px;
+            height: 100%;
+            transition: left 0.3s ease;
+            box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.2);
+        }
+        .sidebar h2 {
+            text-align: center;
+            font-size: 20px; /* লেখার আকার ছোট */
+            font-weight: bold; 
+            margin: 30px 0; /* উপরে-নিচে একটু কম gap */
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+        .sidebar ul li {
+            padding: 15px;
+            cursor: pointer;
+        }
+        .hamburger {
+            font-size: 20px;
+            cursor: pointer;
+            position: fixed;
+            top: 38px;
+            left: 15px;
+            background: #2c3e50;
+            color: white;
+            padding: 6px 10px; /* আগে ছিল 10px, এখন 6px */
+            border-radius: 5px;
+            z-index: 1000;
+        }
+        .main {
+            flex: 1;
+            padding: 20px;
+            width: 100%;
+            transition: margin-left 0.3s ease;
+        }
+        .search-bar {
+            display: block;
+            margin: 20px auto;
+            padding: 10px;
+            width: 80%;
+            max-width: 500px;
+        }
+        .email-list {
+            list-style: none;
+            padding: 0;
+        }
+        .email-list li {
+            padding: 15px;
+            cursor: pointer;
+            border-bottom: 1px solid #ddd;
+        }
+        .email-content {
+            display: none;
+            padding: 20px;
+            background: #fff;
+            border: 1px solid #ddd;
+        }
+        .dark-mode .email-content {
+            background: #333;
+            color: #fff;
+        }
+        .toggle-mode {
+            position: fixed;
+            top: 40px;
+            right: 15px;
+            background: #2c3e50;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+    </style>
 </head>
 <body>
-    <header>
-        <h1>IoT Exam Preparation</h1>
-        <p>Your one-stop solution to excel in the Introduction to IoT (NPTEL) Exam</p>
-    </header>
+    <span class="hamburger" onclick="toggleMenu()">&#9776;</span>
+    <span class="toggle-mode" onclick="toggleMode()">🌗</span>
 
-    <nav>
-        <a href="notes.html">Notes</a>
-        <a href="quiz.html">Quiz</a>
-        <a href="videos.html">Videos</a>
-    </nav>
+    <div class="container">
+        <div class="sidebar" id="sidebar">
+            <h2 id="iot-text">IoT</h2>
 
-    <section class="hero">
-        <h2>Welcome to IoT Exam Preparation!</h2>
-        <p>Enhance your learning with structured notes, interactive quizzes, and insightful videos.</p>
-        <button onclick="window.location.href='quiz.html'">Start Quiz</button>
-    </section>
-
-    <section class="features">
-        <div class="feature-box">
-            <h3>📖 Notes</h3>
-            <p>Organized study material to boost your understanding.</p>
+            
+            <ul>
+                <li>📑 Assignment</li>
+                <li>📖 Notes</li>
+                <li>🎯 Quiz</li>
+                <li>🎥 Videos</li>
+            </ul>
         </div>
-        <div class="feature-box">
-            <h3>🎯 Quiz</h3>
-            <p>Test your knowledge with interactive quizzes.</p>
-        </div>
-        <div class="feature-box">
-            <h3>🎥 Videos</h3>
-            <p>Learn from top IoT experts via video lectures.</p>
-        </div>
-    </section>
 
-    <footer>
-        <p>&copy; 2025 IoT Exam Preparation | Designed for students</p>
-    </footer>
+        <div class="main" id="mainContent">
+            <h2 style="text-align: center;">🌐 Internet of Things</h2>
+            <input type="text" class="search-bar" id="searchInput" placeholder="🔍 Search questions..." onkeyup="searchEmails()">
+            <ul class="email-list" id="emailList">
+                <li onclick="showEmail(0)" class="email-item">❓ Questions1: What is IoT?</li>
+                <li onclick="showEmail(1)" class="email-item">❓ Questions2: IoT applications?</li>
+                <li onclick="showEmail(2)" class="email-item">❓ Questions3: IoT security concerns?</li>
+            </ul>
+            <div class="email-content" id="emailContent">
+                <button onclick="hideEmail()">🔙 Back</button>
+                <h3 id="emailSubject"></h3>
+                <p id="emailBody"></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const emails = [
+            { subject: "What is IoT?", body: "IoT stands for Internet of Things, which connects devices over the internet." },
+            { subject: "IoT applications?", body: "IoT is used in smart homes, healthcare, industrial automation, and more." },
+            { subject: "IoT security concerns?", body: "Security concerns include data breaches, hacking, and unauthorized access." }
+        ];
+
+        function showEmail(index) {
+            document.getElementById("emailSubject").innerText = emails[index].subject;
+            document.getElementById("emailBody").innerText = emails[index].body;
+            document.getElementById("emailContent").style.display = "block";
+        }
+        function hideEmail() {
+            document.getElementById("emailContent").style.display = "none";
+        }
+        function searchEmails() {
+            let input = document.getElementById("searchInput").value.toLowerCase();
+            let items = document.querySelectorAll(".email-item");
+            items.forEach((item, index) => {
+                item.style.display = emails[index].subject.toLowerCase().includes(input) ? "block" : "none";
+            });
+        }
+        function toggleMenu() {
+            let sidebar = document.getElementById("sidebar");
+            sidebar.style.left = sidebar.style.left === "0px" ? "-250px" : "0px";
+        }
+        function toggleMode() {
+            document.body.classList.toggle("dark-mode");
+        }
+        // for changing color IoT
+        document.addEventListener("DOMContentLoaded", function () {
+            let textElement = document.getElementById("iot-text");
+            let text = textElement.innerText; // "IoT"
+            let colors = ["rgb(226, 88, 34)", "white", "green", "orange", "purple", "pink"]; // কালার লিস্ট
+            let coloredText = "";
+        
+            for (let i = 0; i < text.length; i++) {
+                let color = colors[i % colors.length]; // প্রতিটি অক্ষরের জন্য ভিন্ন রং
+                coloredText += `<span style="color: ${color};">${text[i]}</span>`;
+            }
+        
+            textElement.innerHTML = coloredText; // নতুন রঙিন টেক্সট বসানো
+        });
+
+    </script>
 </body>
 </html>
