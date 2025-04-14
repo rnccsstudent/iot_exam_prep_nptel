@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Assignment</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .quiz-container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            width: 100%;
+            max-width: 600px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .question {
+            text-align: left;
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #f1f1f1;
+            border-radius: 8px;
+        }
+        pre {
+            background: #e9ecef;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        button {
+            width: 100%;
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 12px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 10px;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background: #28a745;
+        }
+        .explanation {
+            display: none;
+            background: #fff3cd;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 5px;
+            font-size: 14px;
+            color: #856404;
+            border: 1px solid #ffeeba;
+        }
+        #result {
+            text-align: center;
+            font-size: 18px;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+        
+        @media (max-width: 600px) {
+            .quiz-container {
+                width: 90%;
+                padding: 15px;
+            }
+            button {
+                font-size: 14px;
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+        <h2>
+            <a href="assignment.html" style="text-decoration: none; color: inherit;">
+                🏠
+            </a> 
+            Assignment 6
+        </h2>        
+
+        <div class="question">
+            <p>1) Python is popular for embedded application development as it is very lightweight. (True/False)</p>
+            <label><input type="radio" name="q1" value="True"> True</label><br>
+            <label><input type="radio" name="q1" value="False"> False</label>
+            <button onclick="toggleExplanation('exp1')">Explanation</button>
+            <div id="exp1" class="explanation">Python is not very lightweight for embedded systems compared to C or Assembly.</div>
+        </div>
+
+        <div class="question">
+            <p>2) Adafruit provides a library to work with DHT22 Sensor. (True/False)</p>
+            <label><input type="radio" name="q2" value="True"> True</label><br>
+            <label><input type="radio" name="q2" value="False"> False</label>
+            <button onclick="toggleExplanation('exp2')">Explanation</button>
+            <div id="exp2" class="explanation">Yes, Adafruit provides a Python library for DHT22 sensors.</div>
+        </div>
+
+        <div class="question">
+            <p>3) What is the output of the following Python code?</p>
+            <pre>
+                x = [4, 5, 6]
+                y = [str(x[0] + 1), str(len(x) * 2) + '&Code']
+                z = y[1].split('&')
+                print(z[1])
+            </pre>
+            <label><input type="radio" name="q3" value="5"> 5</label><br>
+            <label><input type="radio" name="q3" value="12"> 12</label><br>
+            <label><input type="radio" name="q3" value="Code"> Code</label><br>
+            <label><input type="radio" name="q3" value="&Code"> &Code</label>
+            <button onclick="toggleExplanation('exp3')">Explanation</button>
+            <div id="exp3" class="explanation">Splitting "6&Code" gives ["6", "Code"]. `z[1]` refers to "Code".</div>
+        </div>
+
+        <div class="question">
+            <p>4) To indicate different blocks of code, Python follows rigid indentation. (True/False)</p>
+            <label><input type="radio" name="q4" value="True"> True</label><br>
+            <label><input type="radio" name="q4" value="False"> False</label>
+            <button onclick="toggleExplanation('exp4')">Explanation</button>
+            <div id="exp4" class="explanation">Python enforces indentation strictly to define blocks.</div>
+        </div>
+
+        <div class="question">
+            <!-- <p>5) What is the output of the following line of code in Python?
+
+                <br> >> print “Hi, Welcome to python!”</p>
+                <label><input type="radio" name="q5" value="">a)  Hi, Welcome to python!</label><br>
+                <label><input type="radio" name="q5" value="">b) “Hi, Welcome to python!”</label><br>
+                <label><input type="radio" name="q5" value="">c) Hi, Welcome to python</label><br>
+                <label><input type="radio" name="q5" value="">d)None of these</label>
+            <button onclick="toggleExplanation('exp5')">Explanation</button>
+            <div id="exp5" class="explanation">Python rules</div> -->
+
+            <p>5) What is the output of the following line of code in Python? 
+                <br> >> print “Hi, Welcome to python!”</p>
+                <label><input type="radio" name="q5" value="Hi, Welcome to python!"> a)  Hi, Welcome to python!</label><br>
+                <label><input type="radio" name="q5" value="“Hi, Welcome to python!”"> b) “Hi, Welcome to python!”</label><br>
+                <label><input type="radio" name="q5" value="Hi, Welcome to python"> c) Hi, Welcome to python</label><br>
+                <label><input type="radio" name="q5" value="None of these"> d) None of these</label>
+                <button onclick="toggleExplanation('exp5')">Explanation</button>
+                <div id="exp5" class="explanation">Python uses print() to display the string without quotes, hence the correct answer is 'Hi, Welcome to python!'.</div>
+                
+        </div>
+
+        <div class="question">
+            <p>6) During remote server access by a Raspberry Pi, where the Raspberry Pi acts as a client, the client needs the following?<br>
+                <label><input type="radio" name="q6" value="Only IP address of server">a. Only IP address of server</label><br>
+                <label><input type="radio" name="q6" value="Only port number">b. Only port number</label><br>
+                <label><input type="radio" name="q6" value="Both server IP address and port number">c. Both server IP address and port number</label><br>
+                <label><input type="radio" name="q6" value="Client’s IP address">d. Client’s IP address</label>
+                <button onclick="toggleExplanation('exp6')">Explanation</button>
+                <div id="exp6" class="explanation">The Raspberry Pi client needs both the server's IP address and the port number to establish communication.</div>                
+        </div>
+        
+        <div class="question">
+            <p>7) State whether the following command to install the PIL library is correct or not.
+                <pre>sudo pip install pillow</pre>
+                <label><input type="radio" name="q7" value="Correct">a. Correct</label><br>
+                <label><input type="radio" name="q7" value="Incorrect">b. Incorrect</label><br>
+            <button onclick="toggleExplanation('exp7')">Explanation</button>
+            <div id="exp7" class="explanation">Correct</div>
+        </div>
+        
+        <div class="question">
+            <p>8) What is the purpose of the "w" mode in the open() function in Python?<br>
+                <label><input type="radio" name="q8" value="To read a file">a. To read a file</label><br>
+                <label><input type="radio" name="q8" value="To write data to a file, overwriting existing content">b. To write data to a file, overwriting existing content</label><br>
+                <label><input type="radio" name="q8" value="To append data to a file">c. To append data to a file</label><br>
+                <label><input type="radio" name="q8" value="To open a file in read and write mode">d. To open a file in read and write mode</label>
+            <button onclick="toggleExplanation('exp8')">Explanation</button>
+            <div id="exp8" class="explanation">To write data to a file, overwriting existing content</div>
+        </div>
+
+        <div class="question">
+            <p>9) What will be the output of the given Python program when reading from the file?
+                <pre>with open("PythonProgram.txt", "w") as file:
+                    file.write("Writing data")
+                with open("PythonProgram.txt", "r") as file:
+                    f = file.read() print('Reading from the file\n') print(f)</pre>                <br>
+                <label><input type="radio" name="q9" value="Writing data">a. Writing data</label><br>
+                <label><input type="radio" name="q9" value="Reading from the file">b. Reading from the file Writing data</label><br>
+                <label><input type="radio" name="q9" value="Error: File not found">c.  Error: File not found</label><br>
+                <label><input type="radio" name="q9" value="None of the above">d. None of the above</label>
+            <button onclick="toggleExplanation('exp9')">Explanation</button>
+            <div id="exp9" class="explanation">Reading from the file
+                Writing data</div>
+        </div>
+ 
+        <div class="question">
+            <p>10) Can we configure Raspberry Pi as a File Server?</p>
+            <label><input type="radio" name="q10" value="Yes"> Yes</label><br>
+            <label><input type="radio" name="q10" value="No"> No</label>
+            <button onclick="toggleExplanation('exp10')">Explanation</button>
+            <div id="exp10" class="explanation">Yes</div>
+        </div>
+        
+        <div class="question">
+            <p>11) Which command is used to configure the Raspberry Pi for the camera module?<br>
+                <pre><label><input type="radio" name="q11" value="sudo camera-config">a. sudo camera-config</label></pre>
+                <pre><label><input type="radio" name="q11" value="sudo raspi-config">b. sudo raspi-config</label></pre>
+                <pre><label><input type="radio" name="q11" value="sudo enable-camera">c. sudo enable-camera</label></pre>
+                <pre><label><input type="radio" name="q11" value="sudo pi-setup">d. sudo pi-setup</label></pre>
+            <button onclick="toggleExplanation('exp11')">Explanation</button>
+            <div id="exp11" class="explanation">b. sudo raspi-config</div>
+        </div>
+        
+        <div class="question">
+            <p>12) What is the final step after enabling the camera in the Raspberry Pi configuration?<br>
+                <label><input type="radio" name="q12" value="Restart the camera service">a. Restart the camera service</label><br>
+                <label><input type="radio" name="q12" value="Run a camera test command">b. Run a camera test command</label><br>
+                <label><input type="radio" name="q12" value="Reboot the Raspberry Pi">c. Reboot the Raspberry Pi</label><br>
+                <label><input type="radio" name="q12" value="Reinstall the Raspberry Pi OS">d. Reinstall the Raspberry Pi OS</label>
+            <button onclick="toggleExplanation('exp12')">Explanation</button>
+            <div id="exp12" class="explanation">c. Reboot the Raspberry Pi</div>
+        </div>
+        
+        <div class="question">
+            <p>13) Which command Exits the nano editor?<br>
+                <label><input type="radio" name="q13" value="Ctrl + X">a. Ctrl + X</label><br>
+                <label><input type="radio" name="q13" value="Ctrl + O">b. Ctrl + O</label><br>
+                <label><input type="radio" name="q13" value="Ctrl + K">c. Ctrl + K</label><br>
+                <label><input type="radio" name="q13" value="None of these">d. None of these</label>
+            <button onclick="toggleExplanation('exp13')">Explanation</button>
+            <div id="exp13" class="explanation">a. Ctrl + X</div>
+        </div>
+        
+        <div class="question">
+            <p>14) Which command Exits the nano editor?<br>
+                <label><input type="radio" name="q14" value="When the relay is manually triggered">a. When the relay is manually triggered</label><br>
+                <label><input type="radio" name="q14" value="When the surrounding temperature is lower than a predefined threshold">b. When the surrounding temperature is lower than a predefined threshold</label><br>
+                <label><input type="radio" name="q14" value="When the surrounding temperature exceeds a predefined threshold">c. When the surrounding temperature exceeds a predefined threshold</label><br>
+                <label><input type="radio" name="q14" value="When the battery voltage drops below a certain level">d. When the battery voltage drops below a certain level</label>
+            <button onclick="toggleExplanation('exp14')">Explanation</button>
+            <div id="exp14" class="explanation">c. When the surrounding temperature exceeds a predefined threshold</div>
+        </div>
+        
+        <div class="question">
+            <p>15) What does the following line of code do?
+                <pre>raspistillcapture -o image.jpg</pre>
+                <label><input type="radio" name="q15" value="Captures video feed">a. Captures video feed</label><br>
+                <label><input type="radio" name="q15" value="Captures still image">b. Captures still image</label><br>
+                <label><input type="radio" name="q15" value="Both (a) and (b)">c. Both (a) and (b)</label><br>
+                <label><input type="radio" name="q15" value="None of these">d. None of these</label><br>
+            <button onclick="toggleExplanation('exp15')">Explanation</button>
+            <div id="exp15" class="explanation">d. None of these</div>
+        </div>
+        <button onclick="checkAnswers()">Submit</button>
+        <p id="result"></p>
+    </div>
+
+    <script>
+        function toggleExplanation(id) {
+            let exp = document.getElementById(id);
+            exp.style.display = exp.style.display === "block" ? "none" : "block";
+        }
+
+        function checkAnswers() {
+            let correctAnswers = {
+                q1: "False",
+                q2: "True",
+                q3: "Code",
+                q4: "True",
+                q5: "Hi, Welcome to python!",
+                q6: "Both server IP address and port number",
+                q7: "Correct",
+                q8: "To write data to a file, overwriting existing content",
+                q9: "Reading from the file Writing data",
+                q10: "Yes",
+                q11: "sudo raspi-config",
+                q12: "Reboot the Raspberry Pi",
+                q13: "Ctrl + X",
+                q14: "When the surrounding temperature exceeds a predefined threshold",
+                q15: "None of these"
+            };
+
+    let score = 0;
+    let totalQuestions = 15;
+
+    for (let i = 1; i <= totalQuestions; i++) {
+        let selectedOption = document.querySelector(`input[name="q${i}"]:checked`);
+        if (selectedOption && selectedOption.value === correctAnswers[`q${i}`]) {
+            score++;
+        }
+    }
+
+    document.getElementById("result").innerText = `Your Score: ${score}/${totalQuestions}`;
+}
+
+    </script>
+</body>
+</html>

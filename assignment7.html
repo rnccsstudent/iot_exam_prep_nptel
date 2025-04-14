@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Assignment</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .quiz-container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            width: 100%;
+            max-width: 600px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .question {
+            text-align: left;
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #f1f1f1;
+            border-radius: 8px;
+        }
+        pre {
+            background: #e9ecef;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        button {
+            width: 100%;
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 12px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 10px;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background: #28a745;
+        }
+        .explanation {
+            display: none;
+            background: #fff3cd;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 5px;
+            font-size: 14px;
+            color: #856404;
+            border: 1px solid #ffeeba;
+        }
+        #result {
+            text-align: center;
+            font-size: 18px;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+        
+        @media (max-width: 600px) {
+            .quiz-container {
+                width: 90%;
+                padding: 15px;
+            }
+            button {
+                font-size: 14px;
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+        <h2>
+            <a href="assignment.html" style="text-decoration: none; color: inherit;">
+                🏠
+            </a> 
+            Assignment 7
+        </h2>        
+
+        <div class="question">
+            <p>1)In Python socket programming, while defining a socket, SOCK_STREAM refers to a type of-</p>
+            <label><input type="radio" name="q1" value="a"> a. SocketFamily</label><br>
+            <label><input type="radio" name="q1" value="b"> b. SocketType</label><br>
+            <label><input type="radio" name="q1" value="c"> c. SocketName</label><br>
+            <label><input type="radio" name="q1" value="b"> b. SocketProtocol</label><br>
+            <button onclick="toggleExplanation('exp1')">Explanation</button>
+            <div id="exp1" class="explanation">IoT faces challenges such as large-scale cooperation among devices and global heterogeneity due to diverse technologies and standards.</div>
+        </div>
+        
+
+        <div class="question">
+            <p>2)If you want to change the label of the Y-axis while plotting a graph using matplotlib in Python, what among the following functions do you use? Suppose you have imported matplotlib as plt-</p>
+            <label><input type="radio" name="q2" value="a"> a. plt.show()</label><br>
+            <label><input type="radio" name="q2" value="b"> b. plt.plot()</label><br>
+            <label><input type="radio" name="q2" value="c"> c. plt.ylabel()</label><br>
+            <label><input type="radio" name="q2" value="d"> d. plt.yaxis()</label><br>
+            <button onclick="toggleExplanation('exp2')">Explanation</button>
+            <div id="exp2" class="explanation">Interoperability is indeed a characteristic of a product or system, meaning the statement is False.</div>
+        </div>
+        
+
+        <div class="question">
+            <p>3)In Socket programming, the parameter AF_INET stands for ___________.</p>
+            <label><input type="radio" name="q3" value="a"> a. Unix protocols</label><br>
+            <label><input type="radio" name="q3" value="b"> b. Internet Protocol(IP)</label><br>
+            <label><input type="radio" name="q3" value="c"> c. File Sharing</label><br>
+            <label><input type="radio" name="q3" value="d"> d. Time slicing</label><br>
+            <button onclick="toggleExplanation('exp3')">Explanation</button>
+            <div id="exp3" class="explanation">Interoperability is required because different systems use various programming languages and communication protocols, making option (c) the correct choice.</div>
+        </div>
+        
+        <div class="question">
+            <p>4)Suppose a Python server is receiving data from a socket as follows,</p>
+            <pre> data, addr = sock.recvfrom(1024)</pre>
+            <p>What kind of socket ‘sock’ is being considered here.</p>
+            <label><input type="radio" name="q4" value="a"> a. TCP socket</label><br>
+            <label><input type="radio" name="q4" value="b"> b. UDP socket</label><br>
+            <label><input type="radio" name="q4" value="c"> c. TAP socket</label><br>
+            <label><input type="radio" name="q4" value="d"> d. None of the given</label><br>
+            <button onclick="toggleExplanation('exp4')">Explanation</button>
+            <div id="exp4" class="explanation">The statement is True because IoT systems involve multiple programming languages, creating heterogeneity and requiring interoperability.</div>
+        </div>
+        
+        <div class="question">
+            <p>5)What is the use of the Mobi-Flow protocol?</p>
+            <label><input type="radio" name="q5" value="a"> a. Enabling static SDN</label><br>
+            <label><input type="radio" name="q5" value="b"> b. Enabling SDN to incorporate mobility</label><br>
+            <label><input type="radio" name="q5" value="c"> c. Enabling Odin Master</label><br>
+            <label><input type="radio" name="q5" value="b"> b. Enabling traditional BGP</label><br>
+            <button onclick="toggleExplanation('exp5')">Explanation</button>
+            <div id="exp5" class="explanation">The statement is False. The correct term for interoperability in terms of message formats is **Syntactic Interoperability**, not Systematic Interoperability.</div>
+        </div>
+        
+        <div class="question">
+            <p>6)During remote server access using socket programming what is the utility of the <pre> .socket_name.listen()</pre>
+             function?</p>
+            <label><input type="radio" name="q6" value="a"> a. To create a new socket</label><br>
+            <label><input type="radio" name="q6" value="b"> b. To bind the socket to connection</label><br>
+            <label><input type="radio" name="q6" value="c"> c. To wait for clients to connect</label><br>
+            <label><input type="radio" name="q6" value="d"> d. To close the connection</label><br>
+            <button onclick="toggleExplanation('exp6')">Explanation</button>
+            <div id="exp6" class="explanation">The correct answer is **(d) None of these**. There is no widely recognized full form of UMB as "Universal Meta Bridge," "Universal Main Bridge," or "Universal Main Bracket" in IoT interoperability.</div>
+        </div>
+        
+        <div class="question">
+            <p>7)Which among the following is the correct direction for PACKET_OUT type messages in SDN?</p>
+            <label><input type="radio" name="q7" value="a"> a. From controller to switch</label><br>
+            <label><input type="radio" name="q7" value="b"> b. From switch to controller</label><br>
+            <label><input type="radio" name="q7" value="c"> c. Between two switches</label><br>
+            <label><input type="radio" name="q7" value="b"> b. Between two controllers</label><br>
+            <button onclick="toggleExplanation('exp7')">Explanation</button>
+            <div id="exp7" class="explanation">The statement is **True**. Arduino is an open-source electronic platform that consists of hardware and software, allowing users to create programmable electronic projects.</div>
+        </div>
+        
+        <div class="question">
+            <p>8)Which among the following is a limitation of the traditional non-SDN networks?</p>
+            <label><input type="radio" name="q8" value="a"> a. Switches do not possess routing table</label><br>
+            <label><input type="radio" name="q8" value="b"> b. Switches are unable to forward traffic</label><br>
+            <label><input type="radio" name="q8" value="c"> c. Switches do not have a global view of the network.</label><br>
+            <label><input type="radio" name="q8" value="d"> d. All of the given</label><br>
+            <button onclick="toggleExplanation('exp8')">Explanation</button>
+            <div id="exp8" class="explanation">The statement is **False**. Arduino boards come with a built-in USB interface that allows users to load programs directly without needing additional electronic circuits.</div>
+        </div>        
+
+        <div class="question">
+            <p>9)During remote server access by a Raspberry Pi, where the Raspberry Pi acts as a client, the client needs the following?</p>
+            <label><input type="radio" name="q9" value="a"> a.  Only IP address of server</label><br>
+            <label><input type="radio" name="q9" value="b"> b. Only port number</label><br>
+            <label><input type="radio" name="q9" value="c"> c. Both server IP address and port number</label><br>
+            <label><input type="radio" name="q9" value="d"> d. Client's IP address</label><br>
+            <button onclick="toggleExplanation('exp9')">Explanation</button>
+            <div id="exp9" class="explanation">The correct answer is **(c) 14**. Arduino UNO has **14 digital I/O pins**, out of which **6 can be used as PWM outputs**.</div>
+        </div>
+        
+ 
+        <div class="question">
+            <p>10)With respect to the concept of soft time-out and hard time-out in SDN switches, which of the following relations hold?</p>
+            <label><input type="radio" name="q10" value="a"> a. Soft time-out > = hard time-out</label><br>
+            <label><input type="radio" name="q10" value="b"> b. Hard time-out > = soft time-out</label><br>
+            <label><input type="radio" name="q10" value="c"> c. Soft time-out  = hard time-out always</label><br>
+            <label><input type="radio" name="q10" value="d"> d. None of the given</label><br>
+            <button onclick="toggleExplanation('exp10')">Explanation</button>
+            <div id="exp10" class="explanation">
+                The correct answer is **(a) Blink 3 times with 1000ms ON and 500ms OFF**.<br>
+                - The `for` loop runs **3 times**, turning the LED ON for **1000ms (1 second)** and OFF for **500ms (0.5 seconds)**.<br>
+                - Since the `loop()` function does nothing, the blinking stops after 3 cycles.
+            </div>
+        </div>
+        
+        
+        <div class="question">
+            <p>11)Which of the following is true?</p>
+            <label><input type="radio" name="q11" value="a"> a. Traditional Network: Routing Table, Software Defined Network: Routing Table</label><br>
+            <label><input type="radio" name="q11" value="b"> b. Traditional Network: Flow Table, Software Defined Network: Routing Table</label><br>
+            <label><input type="radio" name="q11" value="c"> c. Traditional Network: Routing Table, Software Defined Network: Flow Table</label><br>
+            <label><input type="radio" name="q11" value="d"> d. Traditional Network: Flow Table, Software Defined Network: Flow Table</label><br>
+            <button onclick="toggleExplanation('exp11')">Explanation</button>
+            <div id="exp11" class="explanation">
+                The correct answer is **(c) 3**.<br>
+                In Arduino programming, you will commonly find the following types of loops:<br>
+                1. **for loop** – Used for iterating a fixed number of times.<br>
+                2. **while loop** – Runs as long as a condition is true.<br>
+                3. **do-while loop** – Runs at least once and then continues if the condition remains true.
+            </div>
+        </div>
+        
+        
+        <div class="question">
+            <p>12)Consider the following figure below. To which issue of SDN does this particular figure can be related to?</p>
+             <img src="12.jpg" alt="" width="390px" height="100px">
+            <label><input type="radio" name="q12" value="a"> a. Controller placement issue</label><br>
+            <label><input type="radio" name="q12" value="b"> b. Flow Rule placement issue</label><br>
+            <label><input type="radio" name="q12" value="c"> c. Hardware placement issue</label><br>
+            <label><input type="radio" name="q12" value="d"> d. Analysis placement issue</label><br>
+            <button onclick="toggleExplanation('exp12')">Explanation</button>
+            <div id="exp12" class="explanation">
+                The correct answer is **(a) Val = (condition) ? (Statement 1) : (Statement 2)**.<br>
+                - This is known as the **ternary operator**.<br>
+                - If `condition` is **true**, then `Statement 1` is executed.<br>
+                - If `condition` is **false**, then `Statement 2` is executed.<br>
+                - Example: `result = (x > y) ? x : y;` → Assigns the greater value between `x` and `y` to `result`.
+            </div>
+        </div>
+        
+        
+        <div class="question">
+            <p>13)With respect to the directional APIs in SDN, what is the functionality of East-Westbound APIs?</p>
+            <label><input type="radio" name="q13" value="a"> a. To communicate between the controller and switches</label><br>
+            <label><input type="radio" name="q13" value="b"> b. To communicate among multiple controllers</label><br>
+            <label><input type="radio" name="q13" value="c"> c. East-Westbound APIs do not exist</label><br>
+            <label><input type="radio" name="q13" value="b"> d. To communicate between switches themselves</label><br>
+            <button onclick="toggleExplanation('exp13')">Explanation</button>
+            <div id="exp13" class="explanation">
+                The correct answer is **(B) To start communication with the DHT sensor**.<br>
+                - The function <code>dht.begin();</code> is used to initialize the DHT sensor.<br>
+                - It ensures that the sensor is ready to take temperature and humidity readings.<br>
+                - Without this function call, the sensor will not work properly in the program.
+            </div>
+        </div>
+        
+        
+        <div class="question">
+            <p>14)Hierarchical SDN architecture is also known as __________ architecture.</p>
+            <label><input type="radio" name="q14" value="a"> a. Tree</label><br>
+            <label><input type="radio" name="q14" value="b"> b. Flat</label><br>
+            <label><input type="radio" name="q14" value="c"> c. Mesh</label><br>
+            <label><input type="radio" name="q14" value="b"> b. Line</label><br>
+            <button onclick="toggleExplanation('exp14')">Explanation</button>
+            <div id="exp14" class="explanation">
+                The correct answer is **(C) dht.readHumidity();**.<br>
+                - The function <code>dht.readHumidity();</code> is used to get the humidity value from the DHT sensor.<br>
+                - It returns the humidity as a percentage.<br>
+                - Example usage: <code>float humidity = dht.readHumidity();</code><br>
+                - Other functions like <code>dht.readTemp();</code> or <code>dht.getTemperature();</code> do not exist in the DHT library.
+            </div>
+        </div>
+        
+        
+        <div class="question">
+            <p>15)Integrating SDN with IoT is not recommended and is not a suitable approach to follow</p>
+            <label><input type="radio" name="q15" value="a"> a. False</label><br>
+            <label><input type="radio" name="q15" value="b"> b. True</label><br>
+            <button onclick="toggleExplanation('exp15')">Explanation</button>
+            <div id="exp15" class="explanation">
+                The correct answer is **(C) ServoDemo.write();**.<br>
+                - The function <code>Servo.write(angle);</code> is used to set the servo motor to a specific angle.<br>
+                - Example usage: <code>myServo.write(90);</code> → Moves the servo to 90 degrees.<br>
+                - Other options like <code>ServoDemo.move();</code> and <code>ServoDemo.setAngle();</code> are incorrect as they do not exist in the standard Arduino Servo library.
+            </div>
+        </div>
+        
+        <button onclick="checkAnswers()">Submit</button>
+        <p id="result"></p>
+    </div>
+
+    <script>
+        function toggleExplanation(id) {
+            let exp = document.getElementById(id);
+            exp.style.display = exp.style.display === "block" ? "none" : "block";
+        }
+        function checkAnswers() {
+    let correctAnswers = {
+        q1: "b", 
+        q2: "c", 
+        q3: "b", 
+        q4: "b", 
+        q5: "b", 
+        q6: "c", 
+        q7: "a", 
+        q8: "c", 
+        q9: "c", 
+        q10: "b", 
+        q11: "c",
+        q12: "b", 
+        q13: "b", 
+        q14: "a", 
+        q15: "a",  
+    };
+
+    let score = 0;
+    let totalQuestions = 15;
+
+    for (let i = 1; i <= totalQuestions; i++) {
+        let selectedOption = document.querySelector(`input[name="q${i}"]:checked`);
+        if (selectedOption && selectedOption.value === correctAnswers[`q${i}`]) {
+            score++;
+        }
+    }
+
+    document.getElementById("result").innerText = `Your Score: ${score}/${totalQuestions}`;
+}
+
+    </script>
+</body>
+</html>

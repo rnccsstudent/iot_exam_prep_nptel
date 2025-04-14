@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Assignment</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .quiz-container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            width: 100%;
+            max-width: 600px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .question {
+            text-align: left;
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #f1f1f1;
+            border-radius: 8px;
+        }
+        pre {
+            background: #e9ecef;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        button {
+            width: 100%;
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 12px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 10px;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background: #28a745;
+        }
+        .explanation {
+            display: none;
+            background: #fff3cd;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 5px;
+            font-size: 14px;
+            color: #856404;
+            border: 1px solid #ffeeba;
+        }
+        #result {
+            text-align: center;
+            font-size: 18px;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+        
+        @media (max-width: 600px) {
+            .quiz-container {
+                width: 90%;
+                padding: 15px;
+            }
+            button {
+                font-size: 14px;
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+        <h2>
+            <a href="assignment.html" style="text-decoration: none; color: inherit;">
+                🏠
+            </a> 
+            Assignment 3
+        </h2>        
+
+        <div class="question">
+            <p>1)State True or False.</p>
+
+               <p> Statement: “WirelessHART is the latest release of Highway Addressable Remote Transducer protocol.”</p>
+            <label><input type="radio" name="q1" value="a"> a. True</label><br>
+            <label><input type="radio" name="q1" value="b"> b. False</label><br>
+            <button onclick="toggleExplanation('exp1')">Explanation</button>
+            <div id="exp1" class="explanation">IoT faces challenges such as large-scale cooperation among devices and global heterogeneity due to diverse technologies and standards.</div>
+        </div>
+        
+
+        <div class="question">
+            <p>2)State True or False.</p>
+
+                <p>Statement: “Wired HART has a network layer.”</p>
+            <label><input type="radio" name="q2" value="a"> a. True</label><br>
+            <label><input type="radio" name="q2" value="b"> b. False</label><br>
+            <button onclick="toggleExplanation('exp2')">Explanation</button>
+            <div id="exp2" class="explanation">Interoperability is indeed a characteristic of a product or system, meaning the statement is False.</div>
+        </div>
+        
+
+        <div class="question">
+            <p>3)State True or False.</p>
+
+               <p>“WirelessHART physical layer is derived from 802.15.2 protocol”</p>
+            <label><input type="radio" name="q3" value="a"> a. False</label><br>
+            <label><input type="radio" name="q3" value="b"> b. True</label><br>
+            <button onclick="toggleExplanation('exp3')">Explanation</button>
+            <div id="exp3" class="explanation">Interoperability is required because different systems use various programming languages and communication protocols, making option (c) the correct choice.</div>
+        </div>
+        
+        <div class="question">
+            <p>4)WirelessHART operates only in __________ GHz ISM band.</p>
+            <label><input type="radio" name="q4" value="a"> a. 3.7</label><br>
+            <label><input type="radio" name="q4" value="b"> b. 4.8</label><br>
+            <label><input type="radio" name="q4" value="c"> c. 4.8</label><br>
+            <label><input type="radio" name="q4" value="d"> d. 2.4</label><br>
+            <button onclick="toggleExplanation('exp4')">Explanation</button>
+            <div id="exp4" class="explanation">The statement is True because IoT systems involve multiple programming languages, creating heterogeneity and requiring interoperability.</div>
+        </div>
+        
+        <div class="question">
+            <p>5)HART standard was developed from _____________ smart field devices.</p>
+            <label><input type="radio" name="q5" value="a"> a. amplified</label><br>
+            <label><input type="radio" name="q5" value="b"> b. diminished</label><br>
+            <label><input type="radio" name="q5" value="c"> c. isolated</label><br>
+            <label><input type="radio" name="q5" value="d"> d. networked</label><br>
+            <button onclick="toggleExplanation('exp5')">Explanation</button>
+            <div id="exp5" class="explanation">The statement is False. The correct term for interoperability in terms of message formats is **Syntactic Interoperability**, not Systematic Interoperability.</div>
+        </div>
+        
+        <div class="question">
+            <p>6)Main difference between wired and unwired versions is in the physical, data link, and ______ layers.</p>
+            <label><input type="radio" name="q6" value="a"> a. Data link</label><br>
+            <label><input type="radio" name="q6" value="b"> b. Network</label><br>
+            <label><input type="radio" name="q6" value="c"> c. Transport</label><br>
+            <label><input type="radio" name="q6" value="d"> d. None of these</label><br>
+            <button onclick="toggleExplanation('exp6')">Explanation</button>
+            <div id="exp6" class="explanation">The correct answer is **(d) None of these**. There is no widely recognized full form of UMB as "Universal Meta Bridge," "Universal Main Bridge," or "Universal Main Bracket" in IoT interoperability.</div>
+        </div>
+        
+        <div class="question">
+            <p>7)State true or false</p>
+
+                <p>“Collision free and deterministic communication is achieved in HART’s data link layer.”</p>
+            <label><input type="radio" name="q7" value="a"> a. True</label><br>
+            <label><input type="radio" name="q7" value="b"> b. False</label><br>
+            <button onclick="toggleExplanation('exp7')">Explanation</button>
+            <div id="exp7" class="explanation">The statement is **True**. Arduino is an open-source electronic platform that consists of hardware and software, allowing users to create programmable electronic projects.</div>
+        </div>
+        
+        <div class="question">
+            <p>8)Channel hopping is incorporated in which layer of HART?</p>
+            <label><input type="radio" name="q8" value="a"> a. Data link layer</label><br>
+            <label><input type="radio" name="q8" value="b"> b. Physical layer</label><br>
+            <label><input type="radio" name="q8" value="c"> c. Application layer</label><br>
+            <label><input type="radio" name="q8" value="d"> d. Transport layer</label><br>
+            <button onclick="toggleExplanation('exp8')">Explanation</button>
+            <div id="exp8" class="explanation">The statement is **False**. Arduino boards come with a built-in USB interface that allows users to load programs directly without needing additional electronic circuits.</div>
+        </div>        
+
+        <div class="question">
+            <p>9)State True or False.</p>
+
+               <p>“The HART application layer is responsible for extracting commands from a message, executing it and generating responses.”</p>
+            <label><input type="radio" name="q9" value="a"> a. True</label><br>
+            <label><input type="radio" name="q9" value="b"> b. False</label><br>
+            <button onclick="toggleExplanation('exp9')">Explanation</button>
+            <div id="exp9" class="explanation">The correct answer is **(c) 14**. Arduino UNO has **14 digital I/O pins**, out of which **6 can be used as PWM outputs**.</div>
+        </div>
+        
+ 
+        <div class="question">
+            <p>10)NFC is designed for use by devices within ________________ to each other.</p>
+            <label><input type="radio" name="q10" value="a"> a. Anywhere on the globe</label><br>
+            <label><input type="radio" name="q10" value="b"> b. A small building</label><br>
+            <label><input type="radio" name="q10" value="c"> c. Both (a) and (b)</label><br>
+            <label><input type="radio" name="q10" value="d"> d. None of these</label><br>
+            <button onclick="toggleExplanation('exp10')">Explanation</button>
+            <div id="exp10" class="explanation">
+                The correct answer is **(a) Blink 3 times with 1000ms ON and 500ms OFF**.<br>
+                - The `for` loop runs **3 times**, turning the LED ON for **1000ms (1 second)** and OFF for **500ms (0.5 seconds)**.<br>
+                - Since the `loop()` function does nothing, the blinking stops after 3 cycles.
+            </div>
+        </div>
+        
+        
+        <div class="question">
+            <p>11)Passive NFC devices ___________ information which is _____________ by other devices.</p>
+            <label><input type="radio" name="q11" value="a"> a. contain, read</label><br>
+            <label><input type="radio" name="q11" value="b"> b. read, contain</label><br>
+            <label><input type="radio" name="q11" value="c"> c. contain, contain</label><br>
+            <label><input type="radio" name="q11" value="d"> d. None of these</label><br>
+            <button onclick="toggleExplanation('exp11')">Explanation</button>
+            <div id="exp11" class="explanation">
+                The correct answer is **(c) 3**.<br>
+                In Arduino programming, you will commonly find the following types of loops:<br>
+                1. **for loop** – Used for iterating a fixed number of times.<br>
+                2. **while loop** – Runs as long as a condition is true.<br>
+                3. **do-while loop** – Runs at least once and then continues if the condition remains true.
+            </div>
+        </div>
+        
+        
+        <div class="question">
+            <p>12)State True or False.</p>
+
+                <p>“NFC devices work on the principle of magnetic induction.”</p>
+            <label><input type="radio" name="q12" value="a"> a. True</label><br>
+            <label><input type="radio" name="q12" value="b"> b. False</label><br>
+            <button onclick="toggleExplanation('exp12')">Explanation</button>
+            <div id="exp12" class="explanation">
+                The correct answer is **(a) Val = (condition) ? (Statement 1) : (Statement 2)**.<br>
+                - This is known as the **ternary operator**.<br>
+                - If `condition` is **true**, then `Statement 1` is executed.<br>
+                - If `condition` is **false**, then `Statement 2` is executed.<br>
+                - Example: `result = (x > y) ? x : y;` → Assigns the greater value between `x` and `y` to `result`.
+            </div>
+        </div>
+        
+        
+        <div class="question">
+            <p>13)Bluetooth technology is based on _________________.</p>
+            <label><input type="radio" name="q13" value="a"> a. HART</label><br>
+            <label><input type="radio" name="q13" value="b"> b. ZigBee</label><br>
+            <label><input type="radio" name="q13" value="c"> c. All of these</label><br>
+            <label><input type="radio" name="q13" value="d"> d. None of these</label><br>
+            <button onclick="toggleExplanation('exp13')">Explanation</button>
+            <div id="exp13" class="explanation">
+                The correct answer is **(B) To start communication with the DHT sensor**.<br>
+                - The function <code>dht.begin();</code> is used to initialize the DHT sensor.<br>
+                - It ensures that the sensor is ready to take temperature and humidity readings.<br>
+                - Without this function call, the sensor will not work properly in the program.
+            </div>
+        </div>
+        
+        
+        <div class="question">
+            <p>14)State whether the following statement is true or false.</p>
+
+                <p> The Link Manager Protocol in Bluetooth manages the only establishment and authentication.</p>
+            <label><input type="radio" name="q14" value="a"> a. True</label><br>
+            <label><input type="radio" name="q14" value="b"> b. False</label><br>
+            <button onclick="toggleExplanation('exp14')">Explanation</button>
+            <div id="exp14" class="explanation">
+                The correct answer is **(C) dht.readHumidity();**.<br>
+                - The function <code>dht.readHumidity();</code> is used to get the humidity value from the DHT sensor.<br>
+                - It returns the humidity as a percentage.<br>
+                - Example usage: <code>float humidity = dht.readHumidity();</code><br>
+                - Other functions like <code>dht.readTemp();</code> or <code>dht.getTemperature();</code> do not exist in the DHT library.
+            </div>
+        </div>
+        
+        
+        <div class="question">
+            <p>15)Zigbee commonly uses __________data rate.</p>
+            <label><input type="radio" name="q15" value="a"> a. 260 bps</label><br>
+            <label><input type="radio" name="q15" value="b"> b. 260 kbps</label><br>
+            <label><input type="radio" name="q15" value="c"> c. 260 Mbps</label><br>
+            <label><input type="radio" name="q15" value="d"> d. None of these</label><br>
+            <button onclick="toggleExplanation('exp15')">Explanation</button>
+            <div id="exp15" class="explanation">
+                The correct answer is **(C) ServoDemo.write();**.<br>
+                - The function <code>Servo.write(angle);</code> is used to set the servo motor to a specific angle.<br>
+                - Example usage: <code>myServo.write(90);</code> → Moves the servo to 90 degrees.<br>
+                - Other options like <code>ServoDemo.move();</code> and <code>ServoDemo.setAngle();</code> are incorrect as they do not exist in the standard Arduino Servo library.
+            </div>
+        </div>
+        
+        <button onclick="checkAnswers()">Submit</button>
+        <p id="result"></p>
+    </div>
+
+    <script>
+        function toggleExplanation(id) {
+            let exp = document.getElementById(id);
+            exp.style.display = exp.style.display === "block" ? "none" : "block";
+        }
+        function checkAnswers() {
+    let correctAnswers = {
+        q1: "a", 
+        q2: "b", 
+        q3: "a", 
+        q4: "d", 
+        q5: "d", 
+        q6: "b", 
+        q7: "a", 
+        q8: "a", 
+        q9: "a", 
+        q10: "d", 
+        q11: "a",
+        q12: "a", 
+        q13: "d", 
+        q14: "b", 
+        q15: "d",  
+    };
+
+    let score = 0;
+    let totalQuestions = 15;
+
+    for (let i = 1; i <= totalQuestions; i++) {
+        let selectedOption = document.querySelector(`input[name="q${i}"]:checked`);
+        if (selectedOption && selectedOption.value === correctAnswers[`q${i}`]) {
+            score++;
+        }
+    }
+
+    document.getElementById("result").innerText = `Your Score: ${score}/${totalQuestions}`;
+}
+
+    </script>
+</body>
+</html>
