@@ -105,7 +105,7 @@
             <label><input type="radio" name="q1" value="a"> a. True</label><br>
             <label><input type="radio" name="q1" value="b"> b. False</label><br>
             <button onclick="toggleExplanation('exp1')">Explanation</button>
-            <div id="exp1" class="explanation">IoT faces challenges such as large-scale cooperation among devices and global heterogeneity due to diverse technologies and standards.</div>
+            <div id="exp1" class="explanation">WirelessHART is not the latest release of the Highway Addressable Remote Transducer (HART) protocol. Instead, it is a wireless extension of the HART protocol, designed to support wireless communication for industrial automation applications. The HART protocol itself has been around for years, and WirelessHART was introduced to enable wireless connectivity for HART-enabled devices.</div>
         </div>
         
 
@@ -116,7 +116,7 @@
             <label><input type="radio" name="q2" value="a"> a. True</label><br>
             <label><input type="radio" name="q2" value="b"> b. False</label><br>
             <button onclick="toggleExplanation('exp2')">Explanation</button>
-            <div id="exp2" class="explanation">Interoperability is indeed a characteristic of a product or system, meaning the statement is False.</div>
+            <div id="exp2" class="explanation">Wired HART (Highway Addressable Remote Transducer) does indeed have a network layer. It uses a layered communication architecture, which includes the network layer to manage the communication between devices and ensure data is transmitted correctly in a process control environment. This network layer is part of the OSI model used to facilitate communication in the HART protocol.</div>
         </div>
         
 
@@ -127,7 +127,9 @@
             <label><input type="radio" name="q3" value="a"> a. False</label><br>
             <label><input type="radio" name="q3" value="b"> b. True</label><br>
             <button onclick="toggleExplanation('exp3')">Explanation</button>
-            <div id="exp3" class="explanation">Interoperability is required because different systems use various programming languages and communication protocols, making option (c) the correct choice.</div>
+            <div id="exp3" class="explanation">WirelessHART’s physical layer is based on the IEEE 802.15.4 standard, not the 802.15.2 protocol. The 802.15.4 standard is specifically designed for low-power wireless communication in industrial and automation applications, which is why it is used in WirelessHART. The IEEE 802.15.2 standard, on the other hand, deals with coexistence mechanisms for wireless networks, not the physical layer for communication.
+
+</div>
         </div>
         
         <div class="question">
@@ -137,7 +139,7 @@
             <label><input type="radio" name="q4" value="c"> c. 4.8</label><br>
             <label><input type="radio" name="q4" value="d"> d. 2.4</label><br>
             <button onclick="toggleExplanation('exp4')">Explanation</button>
-            <div id="exp4" class="explanation">The statement is True because IoT systems involve multiple programming languages, creating heterogeneity and requiring interoperability.</div>
+            <div id="exp4" class="explanation">WirelessHART operates in the 2.4 GHz ISM (Industrial, Scientific, and Medical) band. This is a globally available unlicensed frequency band commonly used for short-range communication, which is why it is ideal for industrial automation applications like WirelessHART.</div>
         </div>
         
         <div class="question">
@@ -147,7 +149,8 @@
             <label><input type="radio" name="q5" value="c"> c. isolated</label><br>
             <label><input type="radio" name="q5" value="d"> d. networked</label><br>
             <button onclick="toggleExplanation('exp5')">Explanation</button>
-            <div id="exp5" class="explanation">The statement is False. The correct term for interoperability in terms of message formats is **Syntactic Interoperability**, not Systematic Interoperability.</div>
+            <div id="exp5" class="explanation">The HART (Highway Addressable Remote Transducer) standard was developed from networked smart field devices. It was designed to allow communication between smart field devices (such as sensors, actuators, and controllers) and control systems, enabling remote configuration, calibration, and monitoring. The networked structure allows multiple devices to be connected and communicate on a single fieldbus network.
+</div>
         </div>
         
         <div class="question">
@@ -157,7 +160,7 @@
             <label><input type="radio" name="q6" value="c"> c. Transport</label><br>
             <label><input type="radio" name="q6" value="d"> d. None of these</label><br>
             <button onclick="toggleExplanation('exp6')">Explanation</button>
-            <div id="exp6" class="explanation">The correct answer is **(d) None of these**. There is no widely recognized full form of UMB as "Universal Meta Bridge," "Universal Main Bridge," or "Universal Main Bracket" in IoT interoperability.</div>
+            <div id="exp6" class="explanation">The main difference between the wired and wireless versions of HART (Wired HART and WirelessHART) lies in the physical, data link, and network layers. WirelessHART introduces wireless communication, which requires changes in the network layer to support wireless mesh networking, unlike the wired version which uses traditional wired communication for device interaction.</div>
         </div>
         
         <div class="question">
@@ -167,7 +170,8 @@
             <label><input type="radio" name="q7" value="a"> a. True</label><br>
             <label><input type="radio" name="q7" value="b"> b. False</label><br>
             <button onclick="toggleExplanation('exp7')">Explanation</button>
-            <div id="exp7" class="explanation">The statement is **True**. Arduino is an open-source electronic platform that consists of hardware and software, allowing users to create programmable electronic projects.</div>
+            <div id="exp7" class="explanation">In HART's data link layer, collision-free and deterministic communication is achieved through a master-slave communication scheme, where one master device controls the communication with multiple slave devices. This protocol ensures that data transmission occurs without collisions, and the communication is deterministic, meaning it is predictable and consistent in time.
+</div>
         </div>
         
         <div class="question">
@@ -177,7 +181,7 @@
             <label><input type="radio" name="q8" value="c"> c. Application layer</label><br>
             <label><input type="radio" name="q8" value="d"> d. Transport layer</label><br>
             <button onclick="toggleExplanation('exp8')">Explanation</button>
-            <div id="exp8" class="explanation">The statement is **False**. Arduino boards come with a built-in USB interface that allows users to load programs directly without needing additional electronic circuits.</div>
+            <div id="exp8" class="explanation">Channel hopping is incorporated in the physical layer of the WirelessHART protocol. It helps avoid interference and ensures reliable communication by periodically switching between different frequencies within the available spectrum, especially in environments where wireless communication might face signal disruptions.</div>
         </div>        
 
         <div class="question">
@@ -187,7 +191,7 @@
             <label><input type="radio" name="q9" value="a"> a. True</label><br>
             <label><input type="radio" name="q9" value="b"> b. False</label><br>
             <button onclick="toggleExplanation('exp9')">Explanation</button>
-            <div id="exp9" class="explanation">The correct answer is **(c) 14**. Arduino UNO has **14 digital I/O pins**, out of which **6 can be used as PWM outputs**.</div>
+            <div id="exp9" class="explanation">The HART application layer is indeed responsible for extracting commands from a message, executing them, and generating appropriate responses. It provides the interface between the control system and the field devices, interpreting and processing the commands sent from the control system to the devices and vice versa.</div>
         </div>
         
  
@@ -199,9 +203,8 @@
             <label><input type="radio" name="q10" value="d"> d. None of these</label><br>
             <button onclick="toggleExplanation('exp10')">Explanation</button>
             <div id="exp10" class="explanation">
-                The correct answer is **(a) Blink 3 times with 1000ms ON and 500ms OFF**.<br>
-                - The `for` loop runs **3 times**, turning the LED ON for **1000ms (1 second)** and OFF for **500ms (0.5 seconds)**.<br>
-                - Since the `loop()` function does nothing, the blinking stops after 3 cycles.
+                NFC (Near Field Communication) is designed for use by devices within a very short range, typically up to a few centimeters, which makes it suitable for communication between devices that are close to each other, such as within a small building or in direct proximity. It is not intended for long-distance communication like some other wireless technologies.
+
             </div>
         </div>
         
@@ -214,11 +217,7 @@
             <label><input type="radio" name="q11" value="d"> d. None of these</label><br>
             <button onclick="toggleExplanation('exp11')">Explanation</button>
             <div id="exp11" class="explanation">
-                The correct answer is **(c) 3**.<br>
-                In Arduino programming, you will commonly find the following types of loops:<br>
-                1. **for loop** – Used for iterating a fixed number of times.<br>
-                2. **while loop** – Runs as long as a condition is true.<br>
-                3. **do-while loop** – Runs at least once and then continues if the condition remains true.
+                Passive NFC devices contain information, which can then be read by other active NFC devices. Passive devices do not have their own power source and rely on the energy from the active device to transmit the information stored within them.
             </div>
         </div>
         
@@ -231,11 +230,7 @@
             <label><input type="radio" name="q12" value="b"> b. False</label><br>
             <button onclick="toggleExplanation('exp12')">Explanation</button>
             <div id="exp12" class="explanation">
-                The correct answer is **(a) Val = (condition) ? (Statement 1) : (Statement 2)**.<br>
-                - This is known as the **ternary operator**.<br>
-                - If `condition` is **true**, then `Statement 1` is executed.<br>
-                - If `condition` is **false**, then `Statement 2` is executed.<br>
-                - Example: `result = (x > y) ? x : y;` → Assigns the greater value between `x` and `y` to `result`.
+                NFC (Near Field Communication) devices work on the principle of magnetic induction. They use electromagnetic fields to enable communication between devices that are in close proximity, typically within a few centimeters. This principle is the same as that used in RFID (Radio Frequency Identification) technology.
             </div>
         </div>
         
@@ -248,10 +243,7 @@
             <label><input type="radio" name="q13" value="d"> d. None of these</label><br>
             <button onclick="toggleExplanation('exp13')">Explanation</button>
             <div id="exp13" class="explanation">
-                The correct answer is **(B) To start communication with the DHT sensor**.<br>
-                - The function <code>dht.begin();</code> is used to initialize the DHT sensor.<br>
-                - It ensures that the sensor is ready to take temperature and humidity readings.<br>
-                - Without this function call, the sensor will not work properly in the program.
+                Bluetooth technology is not based on HART or ZigBee. It is a separate wireless communication standard designed for short-range communication between devices, typically within a range of up to 100 meters. Bluetooth operates on the 2.4 GHz ISM band and uses frequency hopping to minimize interference.
             </div>
         </div>
         
@@ -264,11 +256,8 @@
             <label><input type="radio" name="q14" value="b"> b. False</label><br>
             <button onclick="toggleExplanation('exp14')">Explanation</button>
             <div id="exp14" class="explanation">
-                The correct answer is **(C) dht.readHumidity();**.<br>
-                - The function <code>dht.readHumidity();</code> is used to get the humidity value from the DHT sensor.<br>
-                - It returns the humidity as a percentage.<br>
-                - Example usage: <code>float humidity = dht.readHumidity();</code><br>
-                - Other functions like <code>dht.readTemp();</code> or <code>dht.getTemperature();</code> do not exist in the DHT library.
+                The Link Manager Protocol (LMP) in Bluetooth manages more than just the establishment and authentication of the link. It is responsible for a variety of tasks including link setup, authentication, encryption, and power management, as well as maintaining the link once it is established.
+
             </div>
         </div>
         
@@ -281,10 +270,8 @@
             <label><input type="radio" name="q15" value="d"> d. None of these</label><br>
             <button onclick="toggleExplanation('exp15')">Explanation</button>
             <div id="exp15" class="explanation">
-                The correct answer is **(C) ServoDemo.write();**.<br>
-                - The function <code>Servo.write(angle);</code> is used to set the servo motor to a specific angle.<br>
-                - Example usage: <code>myServo.write(90);</code> → Moves the servo to 90 degrees.<br>
-                - Other options like <code>ServoDemo.move();</code> and <code>ServoDemo.setAngle();</code> are incorrect as they do not exist in the standard Arduino Servo library.
+                ZigBee commonly uses a data rate of 260 kbps. This is relatively low compared to other wireless technologies, as ZigBee is designed for low-power, low-data-rate communication in applications like home automation, industrial control, and sensor networks.
+
             </div>
         </div>
         
