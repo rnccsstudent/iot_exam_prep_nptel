@@ -105,7 +105,7 @@
             <label><input type="radio" name="q1" value="c"> c. Semantic</label><br>
             <label><input type="radio" name="q1" value="d"> d. None of these</label><br>
             <button onclick="toggleExplanation('exp1')">Explanation</button>
-            <div id="exp1" class="explanation">IoT faces challenges such as large-scale cooperation among devices and global heterogeneity due to diverse technologies and standards.</div>
+            <div id="exp1" class="explanation">MQTT (Message Queuing Telemetry Transport) is a lightweight transport protocol designed for low-bandwidth, high-latency, or unreliable networks. It enables communication between devices by transporting messages through a publish-subscribe model, making it ideal for IoT (Internet of Things) applications.</div>
         </div>
         
 
@@ -116,7 +116,7 @@
             <label><input type="radio" name="q2" value="c"> c. Both (a) and (b)</label><br>
             <label><input type="radio" name="q2" value="d"> d. Neither (a) nor (b)</label><br>
             <button onclick="toggleExplanation('exp2')">Explanation</button>
-            <div id="exp2" class="explanation">Interoperability is indeed a characteristic of a product or system, meaning the statement is False.</div>
+            <div id="exp2" class="explanation">MQTT is specifically designed for remote connections (like sensors or devices far away) and limited bandwidth environments. It works efficiently even with low power and unreliable networks, which makes it perfect for IoT applications.</div>
         </div>
         
 
@@ -127,7 +127,8 @@
             <label><input type="radio" name="q3" value="c"> c. Both (a) and (b)</label><br>
             <label><input type="radio" name="q3" value="d"> d. None of these</label><br>
             <button onclick="toggleExplanation('exp3')">Explanation</button>
-            <div id="exp3" class="explanation">Interoperability is required because different systems use various programming languages and communication protocols, making option (c) the correct choice.</div>
+            <div id="exp3" class="explanation">MQTT uses the publish-subscribe messaging paradigm, where clients can publish messages to a topic and others can subscribe to that topic to receive messages. This allows for decoupled communication between devices.
+</div>
         </div>
         
         <div class="question">
@@ -135,7 +136,9 @@
             <label><input type="radio" name="q4" value="a"> a. True</label><br>
             <label><input type="radio" name="q4" value="b"> b. False</label><br>
             <button onclick="toggleExplanation('exp4')">Explanation</button>
-            <div id="exp4" class="explanation">The statement is True because IoT systems involve multiple programming languages, creating heterogeneity and requiring interoperability.</div>
+            <div id="exp4" class="explanation">In MQTT, Subscribers are not necessarily lightweight sensors.
+Lightweight sensors are typically Publishers, sending data to the broker.
+Subscribers are clients (like apps, servers, or dashboards) that receive the data.</div>
         </div>
         
         <div class="question">
@@ -145,7 +148,8 @@
             <label><input type="radio" name="q5" value="c"> c. Both (a) and (b)</label><br>
             <label><input type="radio" name="q5" value="d"> d. None of these</label><br>
             <button onclick="toggleExplanation('exp5')">Explanation</button>
-            <div id="exp5" class="explanation">The statement is False. The correct term for interoperability in terms of message formats is **Syntactic Interoperability**, not Systematic Interoperability.</div>
+            <div id="exp5" class="explanation">In MQTT, the Broker acts as a middleman between publishers and subscribers. It receives messages from publishers and routes them to the appropriate subscribers based on the topic.
+</div>
         </div>
         
         <div class="question">
@@ -153,7 +157,8 @@
             <label><input type="radio" name="q6" value="a"> a. False</label><br>
             <label><input type="radio" name="q6" value="b"> b. True</label><br>
             <button onclick="toggleExplanation('exp6')">Explanation</button>
-            <div id="exp6" class="explanation">The correct answer is **(d) None of these**. There is no widely recognized full form of UMB as "Universal Meta Bridge," "Universal Main Bridge," or "Universal Main Bracket" in IoT interoperability.</div>
+            <div id="exp6" class="explanation">In MQTT, a topic is a text string (not just numbers) used to organize and route messages. Topics can include letters, numbers, and special characters, and they are usually structured in a hierarchical format like home/temperature/livingroom.
+</div>
         </div>
         
         <div class="question">
@@ -161,7 +166,22 @@
             <label><input type="radio" name="q7" value="a"> a. False</label><br>
             <label><input type="radio" name="q7" value="b"> b. True</label><br>
             <button onclick="toggleExplanation('exp7')">Explanation</button>
-            <div id="exp7" class="explanation">The statement is **True**. Arduino is an open-source electronic platform that consists of hardware and software, allowing users to create programmable electronic projects.</div>
+            <div id="exp7" class="explanation">MQTT defines multiple methods (called control packet types), not just two. Examples include:
+<br>
+CONNECT
+<br>
+PUBLISH
+<br>
+SUBSCRIBE
+<br>
+UNSUBSCRIBE
+<br>
+DISCONNECT
+<br>
+PINGREQ, etc.
+
+<br>
+These allow clients to connect, publish/receive messages, and manage communication with the broker.</div>
         </div>
         
         <div class="question">
@@ -171,7 +191,8 @@
             <label><input type="radio" name="q8" value="c"> c. Sound</label><br>
             <label><input type="radio" name="q8" value="d"> d. None of these</label><br>
             <button onclick="toggleExplanation('exp8')">Explanation</button>
-            <div id="exp8" class="explanation">The statement is **False**. Arduino boards come with a built-in USB interface that allows users to load programs directly without needing additional electronic circuits.</div>
+            <div id="exp8" class="explanation">The Publish/Subscribe architecture in MQTT is event-driven, meaning actions are triggered by events such as a sensor sending data or a client subscribing to a topic. This allows real-time, efficient communication between devices.
+</div>
         </div>        
 
         <div class="question">
@@ -179,7 +200,8 @@
             <label><input type="radio" name="q9" value="a"> a. True</label><br>
             <label><input type="radio" name="q9" value="b"> b. False</label><br>
             <button onclick="toggleExplanation('exp9')">Explanation</button>
-            <div id="exp9" class="explanation">The correct answer is **(c) 14**. Arduino UNO has **14 digital I/O pins**, out of which **6 can be used as PWM outputs**.</div>
+            <div id="exp9" class="explanation">In MQTT, the topic acts as routing information for the broker. When a publisher sends a message to a specific topic, the broker uses that topic to determine which subscribers should receive the message.
+</div>
         </div>
         
  
@@ -191,9 +213,12 @@
             <label><input type="radio" name="q10" value="d"> d. Both (a) and (b)</label><br>
             <button onclick="toggleExplanation('exp10')">Explanation</button>
             <div id="exp10" class="explanation">
-                The correct answer is **(a) Blink 3 times with 1000ms ON and 500ms OFF**.<br>
-                - The `for` loop runs **3 times**, turning the LED ON for **1000ms (1 second)** and OFF for **500ms (0.5 seconds)**.<br>
-                - Since the `loop()` function does nothing, the blinking stops after 3 cycles.
+                CoAP (Constrained Application Protocol) is:
+<br>
+Based on HTTP, as it uses a similar request/response model.
+<br>
+Designed for M2M (Machine-to-Machine) applications, especially in constrained environments like IoT, where devices have limited power and bandwidth.
+
             </div>
         </div>
         
@@ -206,11 +231,8 @@
             <label><input type="radio" name="q11" value="d"> d. XMP</label><br>
             <button onclick="toggleExplanation('exp11')">Explanation</button>
             <div id="exp11" class="explanation">
-                The correct answer is **(c) 3**.<br>
-                In Arduino programming, you will commonly find the following types of loops:<br>
-                1. **for loop** – Used for iterating a fixed number of times.<br>
-                2. **while loop** – Runs as long as a condition is true.<br>
-                3. **do-while loop** – Runs at least once and then continues if the condition remains true.
+                In CoAP, the client-server interaction is asynchronous and typically uses UDP (User Datagram Protocol) as the transport protocol. UDP is chosen because it is lightweight and suitable for constrained devices and networks, which is common in IoT applications.
+
             </div>
         </div>
         
@@ -223,11 +245,8 @@
             <label><input type="radio" name="q12" value="d"> d. None of these</label><br>
             <button onclick="toggleExplanation('exp12')">Explanation</button>
             <div id="exp12" class="explanation">
-                The correct answer is **(a) Val = (condition) ? (Statement 1) : (Statement 2)**.<br>
-                - This is known as the **ternary operator**.<br>
-                - If `condition` is **true**, then `Statement 1` is executed.<br>
-                - If `condition` is **false**, then `Statement 2` is executed.<br>
-                - Example: `result = (x > y) ? x : y;` → Assigns the greater value between `x` and `y` to `result`.
+                AMQP stands for Advanced Message Queuing Protocol, which is an open standard for message-oriented middleware that enables communication between systems using a queue-based model for messaging, ensuring reliable message delivery and handling.
+
             </div>
         </div>
         
@@ -240,10 +259,8 @@
             <label><input type="radio" name="q13" value="d"> d. 9</label><br>
             <button onclick="toggleExplanation('exp13')">Explanation</button>
             <div id="exp13" class="explanation">
-                The correct answer is **(B) To start communication with the DHT sensor**.<br>
-                - The function <code>dht.begin();</code> is used to initialize the DHT sensor.<br>
-                - It ensures that the sensor is ready to take temperature and humidity readings.<br>
-                - Without this function call, the sensor will not work properly in the program.
+                AMQP defines 6 frame types used for communication between message brokers and clients. These frame types handle various aspects of the communication, such as opening and closing connections, sending and receiving data, and handling errors.
+
             </div>
         </div>
         
@@ -254,11 +271,32 @@
             <label><input type="radio" name="q14" value="b"> b. False</label><br>
             <button onclick="toggleExplanation('exp14')">Explanation</button>
             <div id="exp14" class="explanation">
-                The correct answer is **(C) dht.readHumidity();**.<br>
-                - The function <code>dht.readHumidity();</code> is used to get the humidity value from the DHT sensor.<br>
-                - It returns the humidity as a percentage.<br>
-                - Example usage: <code>float humidity = dht.readHumidity();</code><br>
-                - Other functions like <code>dht.readTemp();</code> or <code>dht.getTemperature();</code> do not exist in the DHT library.
+                The OSI (Open Systems Interconnection) model consists of 7 layers, which are:
+<br>
+1. Physical Layer
+
+<br>
+2. Data Link Layer
+
+<br>
+3. Network Layer
+
+<br>
+4. Transport Layer
+
+<br>
+5. Session Layer
+
+<br>
+6. Presentation Layer
+
+<br>
+7. Application Layer
+
+<br>
+
+These layers help standardize network communication and ensure interoperability between different systems.
+
             </div>
         </div>
         
@@ -271,10 +309,8 @@
             <label><input type="radio" name="q15" value="d"> d. Neither (a) nor (b)</label><br>
             <button onclick="toggleExplanation('exp15')">Explanation</button>
             <div id="exp15" class="explanation">
-                The correct answer is **(C) ServoDemo.write();**.<br>
-                - The function <code>Servo.write(angle);</code> is used to set the servo motor to a specific angle.<br>
-                - Example usage: <code>myServo.write(90);</code> → Moves the servo to 90 degrees.<br>
-                - Other options like <code>ServoDemo.move();</code> and <code>ServoDemo.setAngle();</code> are incorrect as they do not exist in the standard Arduino Servo library.
+                The Destination Address in an IPv4 packet represents the final destination where the packet is intended to be delivered, which is typically the target device in the network. It is not the source node address or an intermediate hop. The source node address is specified separately as the Source Address.
+
             </div>
         </div>
         
